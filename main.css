@@ -1,0 +1,258 @@
+/* === Advanced & Animated Portfolio CSS with Horizontal Project Scroll + Section Icons === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #eef2ff, #f3f4f6);
+  color: #111827;
+  scroll-behavior: smooth;
+  transition: background 0.4s ease;
+}
+
+header {
+  background: linear-gradient(to right, #4f46e5, #6366f1);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: slideDown 1s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #e0e7ff;
+  min-height: 24px;
+  position: relative;
+}
+
+.navbar a {
+  margin: 0 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #c7d2fe;
+  transform: scale(1.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #4338ca;
+  border-bottom: 2px dashed #c7d2fe;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.4rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.section h2::before {
+  content: '💼'; /* Default icon — override per section with HTML */
+  font-size: 1.5rem;
+}
+
+.skills-section h2::before { content: '🛠️'; }
+.services-section h2::before { content: '🚀'; }
+.timeline-section h2::before { content: '🕒'; }
+.education-section h2::before { content: '🎓'; }
+.contact-section h2::before { content: '📬'; }
+.projects-section h2::before { content: '📂'; }
+.certifications-section h2::before { content: '🏅'; }
+.about-section h2::before { content: '👨‍💻'; }
+.objective-section h2::before { content: '🎯'; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.skills, .services-list, .timeline {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.skills li, .services-list li {
+  background: linear-gradient(to right, #e0e7ff, #dbeafe);
+  color: #3730a3;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.skills li:hover, .services-list li:hover {
+  background: #c7d2fe;
+  transform: scale(1.08);
+}
+
+.projects {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #c7d2fe transparent;
+}
+
+.projects::-webkit-scrollbar {
+  height: 8px;
+}
+.projects::-webkit-scrollbar-track {
+  background: transparent;
+}
+.projects::-webkit-scrollbar-thumb {
+  background-color: #c7d2fe;
+  border-radius: 4px;
+}
+
+.card {
+  flex: 0 0 280px;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 24px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: grid;
+  gap: 1rem;
+  animation: fadeInUp 1s ease forwards;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+footer {
+  background: #4f46e5;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .navbar a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  .projects {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+}
+
+
+
